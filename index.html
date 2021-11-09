@@ -1,34 +1,819 @@
-<right><p style="color:#0D47A1;font-weight:bold">나만의 엣지있는 블로그 사이트를 가장 짧은 시간에! by 잔재미코딩</p></right>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>잔재미코딩</title>
+		<meta name="description" content="잔재미코딩 온라인 강의 리스트" />
+		<meta name="keywords" content="잔재미코딩, 온라인 강의, IT강의, 파이썬, 풀스택, 데이터 분석, 데이터 과학" />
+		<meta name="author" content="Dave Lee" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<!-- user-scalable 을 사용하지 않는 디바이스를 위해, maximun-scale/minimum-scale 설정을 하는 것입니다-->
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-## 커리큘럼
+		<!-- Open Graph (Facebook, Linkedin) -->
+		<!-- https://ourcodeworld.com/public-media/articles/articleocw-56d1a6901b773.png -->
+		<meta propery="og:type" content="website" />
+		<!-- https://ogp.me/#types -->
+		<meta property="og:title" content="잔재미코딩 온라인 강의 사이트입니다" />
+		<meta property="og:description" content="잔재미코딩에서 만든 온라인 강의 리스트를 공유하는 웹페이지입니다." />
+		<meta property="og:image" content="img/fun-coding-mark.png" />
+		<meta property="og:url" content="https://www.fun-coding.org" />
+		<meta property="og:site_name" content="잔재미코딩" />
 
-## 가장 쉽고 빠른 방법으로 블로그 사이트 만들기
-- 기술을 잘 알지 못해도, 나만의 주소를 가진 나만의 블로그 사이트 만들기
-- 업무에도 활용할 수 있는 마크다운도 익혀보기
-- 기술적인 내용(HTML/CSS)도 가볍게 익혀보기
+		<!-- twitter card (Twitter) -->
+		<!-- https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/twitter-cards-implementation-with-websites/Images/summary_card_tweet.png -->
+		<meta name="twitter:card" content="summary" />
+		<!-- card 종류: summary, photo, player -->
+		<meta name="twitter:title" content="잔재미코딩 온라인 강의 사이트입니다" />
+		<meta name="twitter:description" content="잔재미코딩에서 만든 온라인 강의 리스트를 공유하는 웹페이지입니다." />
+		<meta name="twitter:image" content="img/fun-coding-mark.png" />
+		<meta name="twitter:url" content="https://www.fun-coding.org" />
+		<meta name="twitter:creator" content="Dave Lee" />
 
-### 1차시: 블로그 준비!
-- 클래스 소개
-- 블로그 개발 필요한 준비물 준비하기
-- Github pages 설정해서 블로그 첫 페이지 만들어보기
- 
-### 2차시: 블로그 페이지 작성 시작해보기
-- 초간단 페이지 만들어보기
-- 이쁘게 테마 적용해보기
-- 마크다운 기초 이해하고, 실제 나만의 블로그 페이지 만들기
+		<!-- 일반적인 fabicon 설정 -->
+		<link rel="icon" href="img/fun-coding.ico" />
+		<!-- 아이폰용 fabicon 설정 -->
+		<link rel="apple-touch-icon" href="img/fun-coding.ico" />
+		<!-- 인터넷 익스플러오용 fabicon 설정-->
+		<link rel="short icon" type="image/x-icon" href="img/fun-coding.ico" />
 
-### 3차시: 블로그 페이지 작성 익숙해지기
-- 다양한 마크다운 기법 익혀보며, 
-- 나만의 블로그 페이지 꾸며보기
- 
-### 4차시: 더 프로스럽게! 블로그 페이지 작성해보기
-- HTML 언어 배워보고,
-- HTML 과 마크다운으로 프로스럽게 블로그 페이지 작성해보기
- 
-### 5차시: 더 프로스럽게! 블로그 페이지 작성해보기
-- HTML/CSS 언어 배워보고,
-- HTML/CSS 언어와 마크다운으로 프로스럽게 블로그 페이지 작성해보기
+		<!-- CSS Reset(1), 아이콘 폰트, 웹페이지 사용폰트, style.css -->
+		<link rel="stylesheet" href="css/nomalize.css" />
+		<!-- https://fontawesome.com/start -->
+		<script src="https://kit.fontawesome.com/f1def33959.js" crossorigin="anonymous"></script>
+		<!-- Spoca Han Sans Neo: https://spoqa.github.io/spoqa-han-sans/ko-KR/ -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/spoqa-han-sans/neo/css/SpoqaHanSans-kr.min.css" rel="stylesheet" type="text/css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css?v3" />
+	</head>
+	<body>
+		<header>
+			<div class="inner">
+				<div class="head-container">
+					<div class="head-brand"><a href="https://www.fun-coding.org">잔재미코딩</a></div>
+					<div class="head-blog">
+						<a
+							href="blog"
+							target="_blank"
+							onclick="ga('send', 'event', 'blog', 'blog_main', location.pathname);"
+							style="padding-right: 20px; color: #f20505"
+							>블로그</a
+						>
+							<a href="daveblog.html" target="_blank" onclick="ga('send', 'event', 'lecture', 'material', location.pathname);"
+							>자료모음(2017년)</a>
 
-### 6차시: 나만의 주소로 나만의 블로그 페이지 오픈하기!
-- 자기만의 주소로 사이트 연결하는 방법
-- 남들이 검색해서 바로 찾을 수 있도록 구글과 네이버에 사이트 등록하기!
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- 메인 이미지 섹션 -->
+
+		<section class="main">
+			<div class="main-container">
+				<div class="inner">
+					<div class="title-container">
+						<div class="title">2만명이상 수강하는 검증된 IT 강의 
+						</div>
+						<div class="sub-title">
+							한번 들으면, 전 강의를 수강하기 때문입니다
+						</div>
+						<div class="message">
+							전자책보다 좋은 자료와 <br />
+							현업의 경험으로<br />
+							확연히 다른 IT 강의를 제공합니다<br />
+							<a href="https://www.inflearn.com/course/처음-파이썬-머신러닝-입문?inst=8f7d0ec8" target="_blank" onclick="ga('send', 'event', 'news', 'blog_main', location.pathname);">
+								<div class="news">최신소식: 처음하는 파이썬 머신러닝 부트캠프 [클릭]</div></a
+							>
+							<br />
+							<a href="blog/?p=1" target="_blank" onclick="ga('send', 'event', 'blog', 'about', location.pathname);"
+								><button type="button" class="btn btn-danger" style="padding: 4px 8px">About 잔재미코딩</button></a
+							>
+							<a href="blog3.html" target="_blank" onclick="ga('send', 'event', 'blog', 'review', location.pathname);"
+								><button type="button" class="btn btn-primary" style="padding: 4px 8px">잔재미코딩 후기</button></a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="skill-container">
+					<div class="skill">
+						<i class="fab fa-python skill-icon python-style"></i>
+						<div class="skill-title">
+							<div class="skill-name">업무 자동화</div>
+							<div class="skill-usage">크롤링/자동매매</div>
+						</div>
+					</div>
+					<div class="skill">
+						<i class="far fa-chart-bar skill-icon analysis-style"></i>
+						<div class="skill-title">
+							<div class="skill-name">데이터 분석</div>
+							<div class="skill-usage">데이터 분석/SQL</div>
+						</div>
+					</div>
+					<div class="skill">
+						<i class="fab fa-app-store-ios skill-icon ai-style"></i>
+						<div class="skill-title">
+							<div class="skill-name">AI</div>
+							<div class="skill-usage">인공지능 활용</div>
+						</div>
+					</div>
+					<div class="skill">
+						<i class="fab fa-vuejs skill-icon vue-style"></i>
+						<div class="skill-title">
+							<div class="skill-name">풀스택</div>
+							<div class="skill-usage">웹/앱 서비스</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">주요 블로그 글</div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<!-- HTML5 에서는 태그에 확장처리를 위한 속성으로 data-* 속성 추가
+            data-변수이름=변수값 으로 정의하고, JS 등에서 활용 가능
+          -->
+					<ul class="class-list" data-position="0">
+						<a
+							href="https://www.fun-coding.org/blog/?p=110"
+							target="_blank"
+							onclick="ga('send', 'event', 'blog', 'lecture_guide', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/art/BeginCodingMainSize.jpg" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">잔재미코딩 온라인강의 가이드</div>
+										<div class="class-detail">좋은 개발자가 되고자하는 분들을 위한 이야기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+
+						<a
+							href="https://www.fun-coding.org/blog/?p=92"
+							target="_blank"
+							onclick="ga('send', 'event', 'blog', 'good_dev', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/art/OOPTech.jpg" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">네카라쿠배와 좋은 개발자가 되는 팁</div>
+										<div class="class-detail">좋은 개발자가 되고자하는 분들을 위한 이야기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+
+
+						
+
+						<a
+							href="https://www.fun-coding.org/blog/?p=86"
+							target="_blank"
+							onclick="ga('send', 'event', 'blog', 'learn_fc', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/blog.jpg" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">Top-Down으로 쉽게 익히는 IT 기술</div>
+										<div class="class-detail">비전공자와 입문자가 IT를 익히는 전략</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="blog/?p=52" target="_blank" onclick="ga('send', 'event', 'blog', 'learn_sc', location.pathname);">
+							<li class="class-card">
+								<img src="style/images/art/database.jpg" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">뼛속까지 문과생이 빅데이터 개발자가 되기까지</div>
+										<div class="class-detail">비전공자와 입문자가 IT와 프로그래밍을 익히는 전략</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="blog/?p=42" target="_blank" onclick="ga('send', 'event', 'blog', 'about_blog', location.pathname);">
+							<li class="class-card">
+								<img src="style/images/art/newcommer.png" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">블로그를 시작하며 - 도커?와 블로그</div>
+										<div class="class-detail">잔재미코딩 블로그 소개</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="blog/?p=76" target="_blank" onclick="ga('send', 'event', 'blog', 'why_fail_in_youtube', location.pathname);">
+							<li class="class-card">
+								<img src="style/images/art/coding.gif" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">혹시 IT를 배워봤는데, 잘안된다면?</div>
+										<div class="class-detail">혹시? 유투브나 다른 강의를 한번 들어봐도 어렵기만 하다면?</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="blog/?p=66" target="_blank" onclick="ga('send', 'event', 'blog', 'what_lecture_in_funcoding', location.pathname);">
+							<li class="class-card">
+								<img src="style/images/art/SWTech.jpg" alt="잔재미코딩 블로그" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">학습방법</div>
+										<div class="class-format">블로그</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">잔재미코딩 강의중, 어느 강의를 들을까? 고민이라면?</div>
+										<div class="class-detail">(코린이편) 잔재미코딩 강의중, 어느 강의를 들을까? 고민이라면?</div>
+									</div>
+								</div>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">
+							직장인을 위한 기초부터 활용 압축 과정 <span class="roadmap-desc">(기초부터 가장 다양하고 실질적인 활용 과정)</span>
+						</div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<ul class="class-list" data-position="0">
+						<a
+							href="https://class101.app/e/frsqaRHmeWDTZwvy0yBt"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'class101_data', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/class101_data.png" alt="잔재미코딩 파이썬 데이터 분석 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">파이썬</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 기초부터 데이터 분석 활용</div>
+										<div class="class-detail">파이썬 기초, SQL, pandas, 시각화와 비트코인, 주식, 부동산까지</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://class101.app/e/python_auto"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'class101_auto', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/class101_auto.png" alt="잔재미코딩 파이썬 자동화 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">파이썬</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 기초부터 자동화 활용</div>
+										<div class="class-detail">파이썬 기초부터 가장 다양한 자동화 템플릿 코드 활용하기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">
+							<a href="https://www.inflearn.com/roadmaps/66">데이터 분석/과학 로드맵 [클릭]</a> <span class="roadmap-desc">(데이터분석가/과학자 커리어 과정)</span></div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<!-- HTML5 에서는 태그에 확장처리를 위한 속성으로 data-* 속성 추가
+            data-변수이름=변수값 으로 정의하고, JS 등에서 활용 가능
+          -->
+					<ul class="class-list" data-position="0">
+						<a
+							href="https://www.inflearn.com/course/python-crawling-basic?inst=71325257"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'crawling_start', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/ljh_python.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">파이썬/크롤링</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 입문과 크롤링기초 부트캠프</div>
+										<div class="class-detail">프로그래밍과 파이썬 기초 및 데이터를 프로그래밍으로 다루기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/Crawling-Scrapy-Selenium?inst=469beff7"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'crawling_advance', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/ljh_scrapy.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">크롤링중급</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬과 Selenium / Scrapy</div>
+										<div class="class-detail">현존 최강 크롤링 기술과 프로그래밍 중급</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/SQL-DB-MYSQL-파이썬-데이터분석?inst=7abfe3b0"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'mysql', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/mysql_python.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">MySQL/DB</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">SQL/DB(MySQL) 기본과 활용</div>
+										<div class="class-detail">데이터를 다루는 데이터베이스 기초와 파이썬 기반 활용</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/파이썬-데이터분석-전처리-판다스-시각화?inst=65936339"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'pandas', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/pandas.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">pandas/plotly</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">처음하는 파이썬 데이터 분석</div>
+										<div class="class-detail">데이터의 전처리부터 pandas, plotly (시각화), 분석 이론까지</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/처음-파이썬-머신러닝-입문?inst=8f7d0ec8"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'ml', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="https://cdn.inflearn.com/public/courses/327464/cover/55c4db7b-7764-43cc-ac75-d9e8d08098f1/327464-eng.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">머신러닝</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">처음하는 파이썬 머신러닝 부트캠프</div>
+										<div class="class-detail">쉽게! 캐글 문제와 함께 분류,회귀,군집화 익히기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="https://www.fun-coding.org" target="_blank">
+							<li class="class-card">
+								<img src="style/images/working.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">인공지능</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">처음하는 Pytorch 인공지능 부트캠프</div>
+										<div class="class-detail">쉽게! 실제 유용한 기능 구현해보며 최신 인공지능 익히기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">
+							<a href="https://www.inflearn.com/roadmaps/49">웹/앱서비스 풀스택 로드맵 [클릭]</a> <span class="roadmap-desc">(풀스택 커리어 과정)</span></div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<ul class="class-list" data-position="0">
+						<a
+							href="https://www.inflearn.com/course/python-crawling-basic?inst=71325257"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'crawling_start', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/ljh_python.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">파이썬/크롤링</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 입문과 크롤링기초 부트캠프</div>
+										<div class="class-detail">프로그래밍과 파이썬 기초 및 데이터를 프로그래밍으로 다루기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/SQL-DB-MYSQL-파이썬-데이터분석?inst=7abfe3b0"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'mysql', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/mysql_python.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">MySQL/DB</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">SQL/DB(MySQL) 기본과 활용</div>
+										<div class="class-detail">데이터를 다루는 데이터베이스 기초와 파이썬 기반 활용</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/nosql-파이썬-몽고DB-잔재미코딩?inst=c98270ed"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'mongodb', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/mongodb_python.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">몽고DB/NoSQL</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">NoSQL DB (몽고DB) 기본과 활용</div>
+										<div class="class-detail">빅데이터를 위한 NoSQL 데이터베이스 기초와 파이썬 기반 활용</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/파이썬-풀스택-1?inst=4d5f4fb3"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'flask', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/fullstack_part1.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">flask/백엔드</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 백엔드와 웹기술 기본</div>
+										<div class="class-detail">flask 기반 백엔드 기본과 HTTP 프로토콜, 파이썬 중급 기술</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.inflearn.com/course/프런트엔드-풀스택-2?inst=c3f5cbf0"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'js_es6', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/fullstack_part2.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">JS/프런트엔드</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">풀스택을 위한 프런트엔드 기본</div>
+										<div class="class-detail">모던 웹서비스를 위한 HTML/CSS/JS+ES6</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="https://www.inflearn.com/course/서버기술-풀스택-3?inst=b03c6f9f" target="_blank" onclick="ga('send', 'event', 'lecture', 'docker', location.pathname);">
+							<li class="class-card">
+								<img src="style/images/fullstack_part3.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">도커/배포</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">풀스택을 위한 서버 기술과 도커 기본</div>
+										<div class="class-detail">도커, 리눅스, AWS, nginx, HTTPS, flask 배포 기본</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="https://www.fun-coding.org" target="_blank">
+							<li class="class-card">
+								<img src="style/images/working.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">Flutter</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">풀스택 웹/앱/PC를 위한 Flutter 기본</div>
+										<div class="class-detail">풀스택 서비스를 위한 Flutter 기본</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a href="https://www.fun-coding.org" target="_blank">
+							<li class="class-card">
+								<img src="style/images/working.png" alt="잔재미코딩 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">React</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">풀스택 웹/앱을 위한 React 기본</div>
+										<div class="class-detail">풀스택 서비스를 위한 React 기본</div>
+									</div>
+								</div>
+							</li>
+						</a>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">개발자 핵심 역량 로드맵 <span class="roadmap-desc">(꼭 익혀둬야할 핵심 기본기)</span></div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<ul class="class-list" data-position="0">
+						<a
+							href="https://www.fun-coding.org"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'fc_cs', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/working.png" alt="잔재미코딩 컴퓨터 공학 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">컴퓨터 공학</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">개발자를 위한 컴퓨터공학 핵심</div>
+										<div class="class-detail">기존 패스트캠퍼스 강의 리뉴얼 중 (좋은 개발자를 위한 컴퓨터공학)</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.fastcampus.co.kr/dev_online_algo/"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'ds_algo_python', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/algorithm_python.png" alt="잔재미코딩 알고리즘 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">파이썬 기반</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">파이썬 자료구조와 알고리즘</div>
+										<div class="class-detail">좋은 개발자를 위한 코딩 테스트 준비 (자료구조, 알고리즘, 기술면접)</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="https://www.fastcampus.co.kr/dev_online_algo/"
+							target="_blank"
+							onclick="ga('send', 'event', 'lecture', 'ds_algo_java', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/algorithm_java.png" alt="잔재미코딩 알고리즘 강의" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">JAVA 기반</div>
+										<div class="class-format">온라인 강의</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">JAVA 자료구조와 알고리즘</div>
+										<div class="class-detail">좋은 개발자를 위한 코딩 테스트 준비 (자료구조, 알고리즘)</div>
+									</div>
+								</div>
+							</li>
+						</a>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="inner">
+				<div class="roadmap-container">
+					<div class="roadmap-title-container">
+						<div class="roadmap-title">서적</div>
+						<div class="arrow-container">
+							<i class="fas fa-chevron-circle-left slide-prev"></i>
+							<i class="fas fa-chevron-circle-right slide-next"></i>
+						</div>
+					</div>
+					<!-- HTML5 에서는 태그에 확장처리를 위한 속성으로 data-* 속성 추가
+            data-변수이름=변수값 으로 정의하고, JS 등에서 활용 가능
+          -->
+					<ul class="class-list" data-position="0">
+						<a
+							href="http://www.yes24.com/Product/Goods/60212672?OzSrank=1"
+							target="_blank"
+							onclick="ga('send', 'event', 'book', 'it_start', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/broadIT3.png" alt="잔재미코딩 서적" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">출판서적</div>
+										<div class="class-format">서적</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">누구나 쓱 읽고, 싹 이해하는 IT 핵심 기술</div>
+										<div class="class-detail">입문자를 위한 IT 분야와 핵심 IT 기술 이해하기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="hhttp://www.yes24.com/Product/Goods/43504370?OzSrank=1"
+							target="_blank"
+							onclick="ga('send', 'event', 'book', 'python_start', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/pythonbook.png" alt="잔재미코딩 서적" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">출판서적</div>
+										<div class="class-format">서적</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">왕초보를 위한 파이썬</div>
+										<div class="class-detail">입문자를 위해, 파이썬으로 프로그래밍 익히기</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="http://www.yes24.com/Product/Goods/1461768?OzSrank=8"
+							target="_blank"
+							onclick="ga('send', 'event', 'book', 'kernel_start', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/linuxbook.png" alt="잔재미코딩 서적" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">출판서적</div>
+										<div class="class-format">서적</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">리눅스 커널 프로그래밍</div>
+										<div class="class-detail">고급 개발자를 위한 리눅스 커널 분석과 개발</div>
+									</div>
+								</div>
+							</li>
+						</a>
+						<a
+							href="http://www.yes24.com/Product/Goods/3369009"
+							target="_blank"
+							onclick="ga('send', 'event', 'book', 'kernel_start_addition', location.pathname);"
+						>
+							<li class="class-card">
+								<img src="style/images/linuxbook2.png" alt="잔재미코딩 서적" class="class-image" />
+								<div class="class-container">
+									<div class="class-skill">
+										<div class="class-type">출판서적</div>
+										<div class="class-format">서적</div>
+									</div>
+									<div class="class-desc">
+										<div class="class-title">리눅스 운영 체제의 이해와 개발</div>
+										<div class="class-detail">고급 개발자를 위한 리눅스 커널 분석과 개발</div>
+									</div>
+								</div>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- footer 를 넣을 예정-->
+		<footer>
+			<div class="inner">
+				<div class="footer-message">합리적인 분들과 확연히 다른 좋은 IT 강의를 만들 수 있는 선순환 시스템을 지향합니다</div>
+				<div class="footer-contact">컨택: dream@fun-coding.org</div>
+				<div class="footer-copyright">Copyright 2021 © All rights reserved.</div>
+			</div>
+		</footer>
+		<a id="backtotop"></a>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+		<script type="text/babel" src="js/main.js"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57ce3fd4f79705a2"></script>
+		<script>
+			(function (i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				(i[r] =
+					i[r] ||
+					function () {
+						(i[r].q = i[r].q || []).push(arguments);
+					}),
+					(i[r].l = 1 * new Date());
+				(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m);
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-83664290-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
