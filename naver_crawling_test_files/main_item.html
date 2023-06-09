@@ -1,0 +1,201 @@
+
+<!-- saved from url=(0055)https://finance.naver.com/main_item.naver?item_count=30 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"><style type="text/css">
+body	{margin:0; padding:0; font-size:12px; font-family:돋움, Dotum, AppleGothic, sans-serif; color:#666666; background:#FFF; text-align:center;}
+table, td	{font-size:12px;font-family:돋움;color:#464646} /* 070627 */
+div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6	{margin:0; padding:0;} /* spec2 */
+ul, ol, li {list-style:none;}
+span.no	{display:none;}
+img	{border:0}
+
+a:link, a:visited{color:#464646;text-decoration:none} /* 070627 */
+a:hover, a:active{color:#000000;text-decoration:underline} /* 070627 */
+.blind{overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+
+.box_rolling{clear:both;position:relative;width:810px;height:44px;background:url(https://ssl.pstatic.net/static/nfinance/img/box_top_rolling_v3.gif) no-repeat}
+.tab2{background-position:0 -50px}
+.box_rolling dl{float:left;width:74px;height:44px}
+.box_rolling dl.box_rolling_tab dt a{position:absolute;left:11px;width:59px;height:13px}
+.box_rolling dl.box_rolling_tab dt a.tab{top:9px}
+.box_rolling dl.box_rolling_tab dt a.tab2{top:25px}
+
+.box_rolling ul.item {float:left; overflow:hidden;}
+.box_rolling ul.item li {float:left; width:98px; _width:106px; margin-left:-1px; padding:10px 8px 0 0; color:#464646; text-align:right; background:url(https://ssl.pstatic.net/imgstock/images5/bar_ea.gif) no-repeat 0 11px; letter-spacing:-1px;}
+.box_rolling ul.item li img.updown {margin-top:2px; vertical-align:top;}
+.box_rolling ul.item li img.btn_del {margin:3px 0 0 1px; vertical-align:top;}
+.box_rolling ul.item li img.btn_etc {margin-top:2px; vertical-align:top;}
+.box_rolling ul.item li .number {margin-top:-2px; color:#666666; font-size:11px; font-family:tahoma; letter-spacing:0;}
+
+.box_rolling .guide_txt {float:left; width:607px; padding-top:17px; color:#656565; font-size:11px; text-align:center;}
+.box_rolling .guide_txt img {margin-left:15px; vertical-align:middle;}
+.box_rolling .guide_txt em {color:#ff5300; font-size:11px; font-weight:bold; font-style:normal;}
+.box_rolling .guide_txt .check {color:#000000; font-size:11px;}
+.box_rolling .guide_txt .check strong {color:#000000; font-size:11px;}
+
+.box_rolling .roll_btn{position:absolute;top:0;right:88px}
+.box_rolling .roll_btn img {margin:4px 0 8px 0;vertical-align:top;}
+.box_rolling .btn_go{position:absolute;top:0;right:0}
+.box_rolling .btn_go a{display:inline-block;width:76px;height:44px}
+</style>
+<script language="javascript" src="./recent_code.js"></script>
+<script type="text/javascript">
+<!--
+document.domain = 'naver.com';
+//-->
+</script>
+</head><body marginheight="0">
+
+	
+	
+
+<div class="box_rolling">
+	<dl class="box_rolling_tab">
+		<dt><span class="blind">최근조회종목</span></dt>
+		<dt><a href="https://finance.naver.com/main_item.naver?type=mystock&amp;item_count=30&amp;where=" onclick="parent.clickcr(this,&#39;mys.interest&#39;,&#39;&#39;,&#39;&#39;,event);" class="tab2"><span class="blind">MY STOCK</span></a></dt>
+	</dl>
+	<ul class="item" id="recentItemList">
+	
+		
+		
+			<div class="guide_txt">최근 조회 종목이 없습니다.</div>
+		
+	
+	<div class="roll_btn">
+		<a href="javascript:view_item(&#39;prev&#39;)" onclick="parent.clickcr(this,&#39;mys*r.up&#39;,&#39;&#39;,&#39;&#39;,event);"><img src="./btn_roll_up.gif" alt="rolling up" width="13" height="12"></a><br>
+		<a href="javascript:view_item(&#39;next&#39;)" onclick="parent.clickcr(this,&#39;mys*r.down&#39;,&#39;&#39;,&#39;&#39;,event);"><img src="./btn_roll_down.gif" alt="rolling down" width="13" height="12"></a>
+	</div>
+	<div class="btn_go">
+		<a href="https://finance.naver.com/mystock/recentSearchItemList.naver" target="_top"><span class="blind">최근조회종목 바로가기</span></a>
+	</div>
+</ul></div>
+
+<script type="text/javascript" src="./jindo.min.ns.1.5.3.euckr.js"></script>
+<script type="text/javascript">
+	var item_rcnt_gno = item_rcnt_gno_max = Math.ceil(0/6);
+	var start = 0;
+	var end = 6;
+	function view_item(mode)
+	{
+
+		var total = 0;
+		var gcnt = 6;
+		var li_name;
+
+		if (mode == 'next') 			item_rcnt_gno++;
+		else if (mode == 'prev') 	item_rcnt_gno--;
+		item_rcnt_gno = (item_rcnt_gno + item_rcnt_gno_max) % item_rcnt_gno_max;
+
+		start = item_rcnt_gno * gcnt;
+		end = start + gcnt;
+		if (end+1 > total) end = total;
+
+		for (i=0; i<total; i++)
+		{
+			li_name = 'item_' + i;
+			s_display = 'none';
+			if (i>=start && i<end) s_display = '';
+
+			document.getElementById(li_name).style.display = s_display;
+		}
+	}
+</script>
+
+<script type="text/template" id="recentList">
+{for num:item in datas}
+	{if num >= end}
+		<li id='item_{=num}' style='display:none'>
+	{elseif num < start}
+		<li id='item_{=num}' style='display:none'>
+	{else}
+		<li id='item_{=num}'>
+	{/if}
+
+	<a href="/item/main.naver?code={=item.cd}" onClick="parent.clickcr(this,'mys*r.list','{=item.cd}','{=num+1}',event);" target="_top" >{js itemInfo.$(=item.cd)}</a>
+	{if item.rf == 1}<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up02.gif"  alt="uplimit" width="7" height="11" class="updown">
+	{elseif item.rf == 2}<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif"  alt="up" width="7" height="6" class="updown">
+	{elseif item.rf == 4}<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down02.gif"  alt="downlimit" width="7" height="11" class="updown">
+	{elseif item.rf == 5}<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif"  alt="down" width="7" height="6" class="updown">
+	{else}<span class='tah p11 red01'>-</span>
+	{/if}
+	<div class="number">{js changeNumberFormat(=item.nv)}
+	</span>
+	<a href="javascript:deleteCode('{=item.cd}')" onClick="parent.clickcr(this,'mys*r.delete','','',event);">
+	<img src="https://ssl.pstatic.net/imgstock/images5/btn_del_mini.gif" alt='삭제' width="9" height="9" class="btn_del"></a></div>
+	</li>
+{/for}
+</script>
+
+<script type="text/javascript">
+var itemcodes = '';
+var itemInfo = jindo.$H({});
+var pollingInterval = 2000;
+var pollingAjax = null;
+var timer = null;
+
+function changeNumberFormat(vNumber){
+	var sUnderNumber = "";
+	var sNumberString = vNumber || 0;
+	sNumberString = (typeof sNumberString != "String") ? String(sNumberString) : sNumberString;
+
+	if(sNumberString.indexOf(".") > -1){
+		var aNumber = sNumberString.split(".");
+		sNumberString = aNumber[0];
+		sUnderNumber = "." + aNumber[1];
+	}
+
+	return sNumberString.replace(/(\d)(?=(\d{3})+$)/igm, "$1,") + sUnderNumber;
+}
+
+var startTimer = function() {
+	clearTimer();
+	timer = setInterval('doPolling()', pollingInterval);
+}
+
+var clearTimer = function() {
+	if (pollingAjax) {
+		pollingAjax.abort();
+		pollingAjax = null;
+	}
+
+	timer = window.clearInterval(timer);
+}
+
+var doPolling = function() {
+	clearTimer();
+
+	var pollingApiUrl = 'https://polling.finance.naver.com/api/realtime?query=SERVICE_RECENT_ITEM:' + itemcodes;
+	pollingAjax = jindo.$Ajax(pollingApiUrl, {
+		type : 'jsonp',
+		jsonp_charset : "euc-kr",
+		onload : function(response) {
+			if(response != null && response.readyState() == 4) {
+				refreshQuote(response.json());
+				startTimer();
+			}
+		},
+		timeout : 2,
+		ontimeout : function() {
+			startTimer();
+		},
+		async : true
+	});
+
+	pollingAjax.request();
+}
+
+function refreshQuote(res) {
+	if (res != null && res.resultCode == 'success') {
+		pollingInterval = res.result.pollingInterval;
+
+		for (index = 0 ; index < res.result.areas.length ; index++) {
+			if (res.result.areas[index].name == "SERVICE_RECENT_ITEM") {
+				jindo.$Element(jindo.$$.getSingle("#recentItemList")).html(jindo.$Template('recentList').process({"start":start,"end":end,"datas":res.result.areas[index].datas}));
+			}
+		}
+	}
+}
+
+jindo.$Fn(doPolling).attach(window, "load");
+</script>
+
+</body></html>
